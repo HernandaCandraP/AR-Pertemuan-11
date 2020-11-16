@@ -38,6 +38,7 @@
   <ItemGroup>
      <Compile Include="Assets\birdController.cs" />
      <Compile Include="Assets\targetcollider.cs" />
+     <Compile Include="Assets\RaycastController.cs" />
      <None Include="Assets\StreamingAssets\Vuforia\BelajarAR.xml" />
     <Reference Include="UnityEngine">
         <HintPath>D:/WRI/Game/2020.1.6f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
