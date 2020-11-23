@@ -11,10 +11,10 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{976735DF-2BE0-1D76-F209-5ACC6EFAEAD0}</ProjectGuid>
+    <ProjectGuid>{A44D2F3F-E35D-5FC0-D0FC-D026A357D378}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <AssemblyName>VuforiaScripts</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>.</BaseDirectory>
@@ -55,37 +55,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\birdController.cs" />
-     <Compile Include="Assets\targetcollider.cs" />
-     <Compile Include="Assets\RaycastController.cs" />
-     <Compile Include="Assets\GameController.cs" />
-     <None Include="Assets\StreamingAssets\Vuforia\BelajarAR.xml" />
- <Reference Include="Unity.Timeline.Editor">
- <HintPath>D:/Tugas/Semester 7/Pemrogaman Game/UTS/AR Pertemuan 11/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.VSCode.Editor">
- <HintPath>D:/Tugas/Semester 7/Pemrogaman Game/UTS/AR Pertemuan 11/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>D:/Tugas/Semester 7/Pemrogaman Game/UTS/AR Pertemuan 11/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+     <Compile Include="Packages\package\Vuforia\Scripts\BoundingBoxRenderer.cs" />
+     <Compile Include="Packages\package\Vuforia\Scripts\DefaultInitializationErrorHandler.cs" />
+     <Compile Include="Packages\package\Vuforia\Scripts\Internal\ARFoundationIntegration\ARFoundationInitializer.cs" />
+     <Compile Include="Packages\package\Vuforia\Scripts\DefaultTrackableEventHandler.cs" />
+     <Compile Include="Packages\package\Vuforia\Scripts\Internal\RuntimeOpenSourceInitializer.cs" />
+     <None Include="Packages\package\Vuforia\Scripts\VuforiaScripts.asmdef" />
+ <Reference Include="UnityEditor.UI">
+ <HintPath>D:/Tugas/Semester 7/Pemrogaman Game/UTS/AR Pertemuan 11/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Tugas/Semester 7/Pemrogaman Game/UTS/AR Pertemuan 11/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Timeline">
- <HintPath>D:/Tugas/Semester 7/Pemrogaman Game/UTS/AR Pertemuan 11/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Rider.Editor">
- <HintPath>D:/Tugas/Semester 7/Pemrogaman Game/UTS/AR Pertemuan 11/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.VisualStudio.Editor">
- <HintPath>D:/Tugas/Semester 7/Pemrogaman Game/UTS/AR Pertemuan 11/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.TextMeshPro">
- <HintPath>D:/Tugas/Semester 7/Pemrogaman Game/UTS/AR Pertemuan 11/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
- </Reference>
- <Reference Include="UnityEditor.UI">
- <HintPath>D:/Tugas/Semester 7/Pemrogaman Game/UTS/AR Pertemuan 11/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>D:/WRI/Game/2020.1.6f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -260,6 +240,18 @@
  </Reference>
  <Reference Include="UnityEngine.XRModule">
  <HintPath>D:/WRI/Game/2020.1.6f1/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Graphs">
+ <HintPath>D:/WRI/Game/2020.1.6f1/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Android.Extensions">
+ <HintPath>D:/WRI/Game/2020.1.6f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.WindowsStandalone.Extensions">
+ <HintPath>D:/WRI/Game/2020.1.6f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="Vuforia.UnityExtensions.Editor">
+ <HintPath>D:/Tugas/Semester 7/Pemrogaman Game/UTS/AR Pertemuan 11/Packages/package/Vuforia/Plugins/Managed/Editor/Vuforia.UnityExtensions.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Vuforia.UnityExtensions">
  <HintPath>D:/Tugas/Semester 7/Pemrogaman Game/UTS/AR Pertemuan 11/Packages/package/Vuforia/Plugins/Managed/Runtime/Vuforia.UnityExtensions.dll</HintPath>
@@ -609,16 +601,6 @@
  <Reference Include="System.Xml.Serialization">
  <HintPath>D:/WRI/Game/2020.1.6f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.Serialization.dll</HintPath>
  </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="VuforiaScripts.csproj">
-      <Project>{354EF0B9-3BE1-4E6D-BDEA-0AE796ECA03F}</Project>
-      <Name>VuforiaScripts</Name>
-    </ProjectReference>
-    <ProjectReference Include="VuforiaEditorScripts.csproj">
-      <Project>{99F85A2D-F496-1D44-B67F-354B6B9FB45E}</Project>
-      <Name>VuforiaEditorScripts</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
