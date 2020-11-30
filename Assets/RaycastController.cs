@@ -12,6 +12,7 @@ public class RaycastController : MonoBehaviour
     public float fireRate = 1.6f;
     private bool nextShot = true;
     private string objName = "";
+    public AudioClip tembak;
 
     AudioSource audio;
     public AudioClip[] clips;
@@ -33,6 +34,7 @@ public class RaycastController : MonoBehaviour
         if(instance == null){
             instance = this;
         }
+        audio = GetComponent<AudioSource>();
     }
 
     public void playSound(int sound){
@@ -57,6 +59,9 @@ public class RaycastController : MonoBehaviour
     }
 
     public void Fire(){
+        // tugas 1 pertemuan 14
+        audio.clip = tembak;
+        audio.Play();
         if(nextShot){
             StartCoroutine(takeShot());
             nextShot = false;
@@ -76,6 +81,9 @@ public class RaycastController : MonoBehaviour
                 Destroy(hit.collider.gameObject);
 
                 spawnNewBird();
+            }else{
+                // tugas 2 pertemuan 14
+                print("Tembakan tidak tepat");
             }
         }
 
