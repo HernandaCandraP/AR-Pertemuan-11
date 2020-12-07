@@ -72,6 +72,8 @@ public class RaycastController : MonoBehaviour
         Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         RaycastHit hit;
 
+        GameController.instance.tembakPerRonde--;
+
         int layer_mask = LayerMask.GetMask("bird_layer");
         if(Physics.Raycast(ray,out hit, maxDistanceRay, layer_mask)){
             objName = hit.collider.gameObject.name;
@@ -80,7 +82,12 @@ public class RaycastController : MonoBehaviour
             if(objName == "BirdAsset(Clone)"){
                 Destroy(hit.collider.gameObject);
 
-                spawnNewBird();
+                // spawnNewBird();
+
+                StartCoroutine(spawnNewBird());
+				GameController.instance.tembakPerRonde = 3;
+				GameController.instance.playerScore++;
+				GameController.instance.roundScore++;
             }else{
                 // tugas 2 pertemuan 14
                 print("Tembakan tidak tepat");
