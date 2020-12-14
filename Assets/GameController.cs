@@ -189,9 +189,9 @@ public class GameController : MonoBehaviour
 		yield return new WaitForSeconds(1);
 		ronde++;
 		GUITeksRonde.SetActive(true);
-		// targetTeks.text= "Tembak "+roundTargetScore+" burung";
+		targetTeks.text= "Tembak "+roundTargetScore+" burung";
 		teksJmlRonde.text = ronde.ToString();
-		// StartCoroutine(hideRoundText());
+		StartCoroutine(hideTeksRonde());
 	}
     public void restart(){
 		hideItems();
