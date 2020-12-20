@@ -9,7 +9,7 @@ public class RaycastController : MonoBehaviour
     public static RaycastController instance;
     public Text birdName;
     public Transform gunFlashTarget;
-    public float fireRate = 1.6f;
+    public float fireRate = 10f;
     private bool nextShot = true;
     private string objName = "";
     public AudioClip tembak;
@@ -21,7 +21,8 @@ public class RaycastController : MonoBehaviour
     void Start()
     {
         StartCoroutine(spawnNewBird());
-        playSound(2);   
+        audio = GetComponent<AudioSource>();
+        // playSound(2);   
     }
 
     // Update is called once per frame
@@ -34,7 +35,6 @@ public class RaycastController : MonoBehaviour
         if(instance == null){
             instance = this;
         }
-        audio = GetComponent<AudioSource>();
     }
 
     public void playSound(int sound){
@@ -59,16 +59,18 @@ public class RaycastController : MonoBehaviour
     }
 
     public void Fire(){
-        // tugas 1 pertemuan 14
-        audio.clip = tembak;
-        audio.Play();
+
         if(nextShot){
             StartCoroutine(takeShot());
-            nextShot = false;
+            nextShot = true;
         }
     }
 
     private IEnumerator takeShot(){
+        // tugas 1 pertemuan 14
+        audio.clip = tembak;
+        audio.Play();
+        
         Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         RaycastHit hit;
 
@@ -95,11 +97,11 @@ public class RaycastController : MonoBehaviour
         }
 
         GameObject gunFlash = Instantiate(Resources.Load("gunFlashSmoke", typeof(GameObject))) as GameObject;
-        gunFlash.transform.position = gunFlashTarget.transform.position;
+		gunFlash.transform.position = gunFlashTarget.position;
 
         yield return new WaitForSeconds(fireRate);
         
-        nextShot = true;
+        nextShot = false;
     }
 
 

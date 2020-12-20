@@ -12,11 +12,11 @@ public class GameController : MonoBehaviour
 
     // komponen GUI
     public GameObject startPanel;
-    public int playerScore =0;
+    public int playerScore =100;
     public Text hitungTeks;
     public Text hitungNyawa;
     public int ronde = 1;
-    public GameObject rondeTeks;
+    // public GameObject rondeTeks;
     public Text jmlRonde;
     public Text teksJmlRonde;
     public Text targetTeks;
@@ -104,10 +104,10 @@ public class GameController : MonoBehaviour
 	}
 
     private IEnumerator hilangNyawa(){
-		yield return new WaitForSeconds(2);
+		// yield return new WaitForSeconds(2);
 		nyawa--;
 
-		if(nyawa==0)
+		if(nyawa<=0)
 		{
 			GUITembak.SetActive(false);
 			playFX(2);
@@ -129,6 +129,7 @@ public class GameController : MonoBehaviour
     public IEnumerator playRound(){
 		yield return new WaitForSeconds(2f);
 		targetTeks.text="Tembak "+tembakPerRonde+" burung";
+		GUITeksRonde.SetActive(true);
         playFX(0);
 
         StartCoroutine(hideTeksRonde());
@@ -147,7 +148,7 @@ public class GameController : MonoBehaviour
 		GUITembak.SetActive(true);
 		// GUIAnjing.SetActive(true);
 		// GUITeksRonde.SetActive(true);
-        GUIGameOverPanel.SetActive(true);
+        // GUIGameOverPanel.SetActive(true);
         // hideStartPanel();
         Terrain.SetActive(true);
         GUIGun.SetActive(true);

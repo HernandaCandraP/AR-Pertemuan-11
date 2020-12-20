@@ -51,4 +51,8 @@ public class controlScript : MonoBehaviour
         audio.clip = clips[sound];
         audio.Play();
     }
+
+    public void keluarGame(){
+        Application.Quit();
+    }
 }
