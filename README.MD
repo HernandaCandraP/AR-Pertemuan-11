@@ -37,7 +37,7 @@ Game Over</br>
 * Tugas 2 </br>
   <img src="Image/Pertemuan15_Tugas2.JPG" width="300">
 
-## Tugas 13
+## Tugas 16
 * Tugas 1 </br>
   <img src="Image/Pertemuan16_Tugas1.JPG" width="300">
 * Tugas 2 </br>
